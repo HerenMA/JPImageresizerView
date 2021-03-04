@@ -9,6 +9,9 @@ Pod::Spec.new do |s|
   s.frameworks = ["UIKit", "QuartzCore", "MobileCoreServices", "AVFoundation"]
   s.source = { :git => "https://github.com/HerenMA/JPImageresizerView.git", :tag => s.version }
 
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  
   s.ios.deployment_target    = '8.0'
   s.ios.vendored_framework   = 'ios/JPImageresizerView.framework'
 end
