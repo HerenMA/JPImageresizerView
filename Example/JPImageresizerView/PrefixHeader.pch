@@ -1,0 +1,39 @@
+//
+//  PrefixHeader.pch
+//  JPImageresizerView
+//
+//  Created by 周健平 on 2019/12/18.
+//  Copyright © 2019 ZhouJianPing. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define GirlCount 8
+
+#define LandscapeVerBtnSpace 10.0
+#define PortraitHorBtnSpace 20.0
+#define ButtonHeight 30.0
+
+#define JPGIFDuration 2.0
+#define JPCutGIFDuration 5.0
+
+#import "JPImageresizerView.h"
+#import "JPInline.h"
+#import "JPMacro.h"
+#import "JPSolveTool.h"
+#import "UIView+JPExtension.h"
+#import "UIView+JPPOP.h"
+#import "UIColor+JPExtension.h"
+#import "JPProgressHUD.h"
+#import "JPImageresizerTool.h"
+#import "JPExportCancelView.h"
+
+CG_INLINE UIFont * JPShapeFont(CGFloat fontSize)  {
+    return [UIFont fontWithName:@"shape" size:JPScaleValue(fontSize)];
+}
+
+#define JPMargin 16.0 //JPScaleValue(16)
+#define JPSpace 10.0
+
+#endif /* PrefixHeader_pch */
