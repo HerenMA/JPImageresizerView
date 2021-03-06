@@ -27,10 +27,21 @@ Pod::Spec.new do |s|
   s.author           = { 'ZhouJianPing' => 'zhoujianping24@hotmail.com' }
   s.source           = { :git => 'https://github.com/HerenMA/JPImageresizerView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
   s.ios.deployment_target = '8.0'
-
-  s.source_files = 'JPImageresizerView/Classes/**/*'
+  s.ios.frameworks = ["UIKit", "QuartzCore", "MobileCoreServices", "AVFoundation"]
+  
+  s.ios.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.ios.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  
+  s.default_subspec = 'Core'
+  
+  s.subspec 'Core' do |ss|
+    ss.source_files = 'JPImageresizerView/Classes/**/*'
+  end
+  
+  s.subspec 'Framework' do |ss|
+    ss.ios.vendored_framework = 'ios/JPImageresizerView.framework'
+  end
   
   # s.resource_bundles = {
   #   'JPImageresizerView' => ['JPImageresizerView/Assets/*.png']
